@@ -28,6 +28,7 @@ public class Lobby extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JLabel lblNome = new JLabel("NOME");
 		lblNome.setHorizontalAlignment(SwingConstants.CENTER);
@@ -37,6 +38,7 @@ public class Lobby extends JFrame {
 		contentPane.add(lblNome);
 		
 		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtNome.setBounds(10, 200, 201, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
@@ -48,13 +50,18 @@ public class Lobby extends JFrame {
 		lblCategoria.setBounds(10, 231, 201, 15);
 		contentPane.add(lblCategoria);
 		
-		JComboBox comboCategoria = new JComboBox();
+		JComboBox<String> comboCategoria = new JComboBox<String>();
 		comboCategoria.setBounds(10, 257, 201, 20);
+		comboCategoria.addItem("Rock");
+		comboCategoria.addItem("Games");
+		comboCategoria.addItem("Programming");
 		contentPane.add(comboCategoria);
 		
 		JButton btnJogar = new JButton("JOGAR");
 		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnJogar.setBounds(221, 256, 130, 23);
 		contentPane.add(btnJogar);
+		
+		setVisible(true);
 	}
 }
