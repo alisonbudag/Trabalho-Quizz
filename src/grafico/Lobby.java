@@ -9,10 +9,14 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class Lobby extends JFrame {
 
@@ -57,10 +61,43 @@ public class Lobby extends JFrame {
 		comboCategoria.addItem("Programming");
 		contentPane.add(comboCategoria);
 		
-		JButton btnJogar = new JButton("JOGAR");
-		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnJogar.setBounds(221, 256, 130, 23);
-		contentPane.add(btnJogar);
+		JLabel lblJogar = new JLabel("JOGAR");
+		lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar.png"));
+		lblJogar.setBounds(221, 249, 130, 36);
+		contentPane.add(lblJogar);
+		lblJogar.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				
+				lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar.png"));
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				
+				lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar2.png"));
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		setVisible(true);
 	}
