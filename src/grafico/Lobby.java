@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import codigo.SelecionarPerguntas;
+
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +20,8 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Lobby extends JFrame {
 
@@ -58,31 +63,51 @@ public class Lobby extends JFrame {
 		comboCategoria.setBounds(10, 257, 201, 20);
 		comboCategoria.addItem("Rock");
 		comboCategoria.addItem("Games");
-		comboCategoria.addItem("Programming");
+		comboCategoria.addItem("Séries");
 		contentPane.add(comboCategoria);
 		
-		JLabel lblJogar = new JLabel("JOGAR");
-		lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar.png"));
-		lblJogar.setBounds(221, 249, 130, 36);
-		contentPane.add(lblJogar);
-		lblJogar.addMouseListener(new MouseListener() {
+		JButton btnJogar = new JButton("JOGAR");
+		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnJogar.setBounds(221, 200, 98, 82);
+		contentPane.add(btnJogar);
+		
+		JButton btnSair = new JButton("SAIR");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnSair.setBounds(330, 249, 110, 33);
+		contentPane.add(btnSair);
+		
+		JButton btnRanking = new JButton("RANKING");
+		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnRanking.setBounds(330, 200, 110, 33);
+		contentPane.add(btnRanking);
+		btnJogar.addMouseListener(new MouseListener() {
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				
-				lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar.png"));
+				modelo.Perguntas.perguntasSelecionadas.clear();
+				
+				String categoria = comboCategoria.getSelectedItem().toString();
+				
+				SelecionarPerguntas a = new SelecionarPerguntas();
+				a.selecionarPerguntas(categoria);
 				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				
-				lblJogar.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\jogar2.png"));
+				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
 				
 			}
 			

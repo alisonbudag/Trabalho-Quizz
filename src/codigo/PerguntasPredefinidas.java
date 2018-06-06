@@ -2,7 +2,7 @@ package codigo;
 
 import modelo.PadraoPerguntas;
 
-public class Perguntas extends PadraoPerguntas {
+public class PerguntasPredefinidas extends PadraoPerguntas {
 
 	@Override
 	public void cadastrarPerguntasRock() {
@@ -417,7 +417,7 @@ public class Perguntas extends PadraoPerguntas {
 	@Override
 	public void cadastrarPerguntasCinema() {
 
-		// Pergunta Programming #1
+		// Pergunta Cinema #1
 		modelo.Perguntas p1 = new modelo.Perguntas();
 		p1.setQuestao("Em que ano lançou Game of Thrones?");
 		p1.setAlternativa1("2011");
@@ -427,7 +427,7 @@ public class Perguntas extends PadraoPerguntas {
 		p1.setAlternativaCorreta(1);
 		modelo.Perguntas.sessaoCinema.add(p1);
 
-		// Pergunta Programming #2
+		// Pergunta Cinema #2
 		modelo.Perguntas p2 = new modelo.Perguntas();
 		p2.setQuestao("Qual é o nome do protagonista da série The O.C?");
 		p2.setAlternativa1("Ryan");
@@ -437,7 +437,7 @@ public class Perguntas extends PadraoPerguntas {
 		p2.setAlternativaCorreta(1);
 		modelo.Perguntas.sessaoCinema.add(p2);
 
-		// Pergunta Programming #3
+		// Pergunta Cinema #3
 		modelo.Perguntas p3 = new modelo.Perguntas();
 		p3.setQuestao("Dr. House teve quantas temporadas?");
 		p3.setAlternativa1("7");
@@ -447,7 +447,7 @@ public class Perguntas extends PadraoPerguntas {
 		p3.setAlternativaCorreta(3);
 		modelo.Perguntas.sessaoCinema.add(p3);
 
-		// Pergunta Programming #4
+		// Pergunta Cinema #4
 		modelo.Perguntas p4 = new modelo.Perguntas();
 		p4.setQuestao("Em Two and a Half Man, o personagem Charles Harper é um");
 		p4.setAlternativa1("Jogador de Golf");
@@ -457,7 +457,7 @@ public class Perguntas extends PadraoPerguntas {
 		p4.setAlternativaCorreta(4);
 		modelo.Perguntas.sessaoCinema.add(p4);
 
-		// Pergunta Programming #5
+		// Pergunta Cinema #5
 		modelo.Perguntas p5 = new modelo.Perguntas();
 		p5.setQuestao("A frase: 'A única razão para esperar um mês por sexo é quando ela tem 17 anos e 11 meses' é feita em qual série e por qual personagem?");
 		p5.setAlternativa1("Two and a Half Man - Charles Harper");
@@ -467,7 +467,7 @@ public class Perguntas extends PadraoPerguntas {
 		p5.setAlternativaCorreta(3);
 		modelo.Perguntas.sessaoCinema.add(p5);
 
-		// Pergunta Programming #6
+		// Pergunta Cinema #6
 		modelo.Perguntas p6 = new modelo.Perguntas();
 		p6.setQuestao("Qual é a cor do carro que Dean Winchester dirige na série Supernatural?");
 		p6.setAlternativa1("Cinza");
@@ -477,7 +477,7 @@ public class Perguntas extends PadraoPerguntas {
 		p6.setAlternativaCorreta(4);
 		modelo.Perguntas.sessaoCinema.add(p6);
 
-		// Pergunta Programming #7
+		// Pergunta Cinema #7
 		modelo.Perguntas p7 = new modelo.Perguntas();
 		p7.setQuestao("Não contavam com minha astúcia!");
 		p7.setAlternativa1("Chaves");
@@ -487,7 +487,7 @@ public class Perguntas extends PadraoPerguntas {
 		p7.setAlternativaCorreta(2);
 		modelo.Perguntas.sessaoCinema.add(p7);
 
-		// Pergunta Programming #8
+		// Pergunta Cinema #8
 		modelo.Perguntas p8 = new modelo.Perguntas();
 		p8.setQuestao("Qual foi a primeira produção da Netflix a receber um Emmy?");
 		p8.setAlternativa1("House of Cards");
@@ -497,7 +497,7 @@ public class Perguntas extends PadraoPerguntas {
 		p8.setAlternativaCorreta(1);
 		modelo.Perguntas.sessaoCinema.add(p8);
 
-		// Pergunta Programming #9
+		// Pergunta Cinema #9
 		modelo.Perguntas p9 = new modelo.Perguntas();
 		p9.setQuestao("Carry on My Wayward Son - Kansas, é famosa por tocar em todo episódio de final de temporada de qual série?");
 		p9.setAlternativa1("The Flash");
@@ -507,7 +507,7 @@ public class Perguntas extends PadraoPerguntas {
 		p9.setAlternativaCorreta(3);
 		modelo.Perguntas.sessaoCinema.add(p9);
 
-		// Pergunta Programming #10
+		// Pergunta Cinema #10
 		modelo.Perguntas p10 = new modelo.Perguntas();
 		p10.setQuestao("Qual o nome do bar frequentado em How I Met Your Mother?");
 		p10.setAlternativa1("MCLaren");
@@ -517,105 +517,105 @@ public class Perguntas extends PadraoPerguntas {
 		p10.setAlternativaCorreta(2);
 		modelo.Perguntas.sessaoCinema.add(p10);
 
-		// Pergunta Programming #11
+		// Pergunta Cinema #11
 		modelo.Perguntas p11 = new modelo.Perguntas();
-		p11.setQuestao("");
-		p11.setAlternativa1("");
-		p11.setAlternativa2("");
-		p11.setAlternativa3("");
-		p11.setAlternativa4("");
-		p11.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p11);
+		p11.setQuestao("Qual é o nome do assistente e amigo de Sherlock Holmes?");
+		p11.setAlternativa1("Dr. Watson");
+		p11.setAlternativa2("Dr. Hobbit");
+		p11.setAlternativa3("Dr. Ralf");
+		p11.setAlternativa4("Dr. Estranho");
+		p11.setAlternativaCorreta(1);
+		modelo.Perguntas.sessaoCinema.add(p11);
 
-		// Pergunta Programming #12
+		// Pergunta Cinema #12
 		modelo.Perguntas p12 = new modelo.Perguntas();
-		p12.setQuestao("");
-		p12.setAlternativa1("");
-		p12.setAlternativa2("");
-		p12.setAlternativa3("");
-		p12.setAlternativa4("");
-		p12.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p12);
+		p12.setQuestao("The 100 é uma série que");
+		p12.setAlternativa1("O planeta Terra explodiu e poucos se salvaram indo viver em Marte");
+		p12.setAlternativa2("O planeta Terra é radioativo e poucos se salvaram indo viver em Marte");
+		p12.setAlternativa3("O planeta Terra é radioativo e poucos se salvaram indo viver em uma nave");
+		p12.setAlternativa4("Existem 100 pessoas que lutam até morrer.");
+		p12.setAlternativaCorreta(3);
+		modelo.Perguntas.sessaoCinema.add(p12);
 
-		// Pergunta Programming #13
+		// Pergunta Cinema #13
 		modelo.Perguntas p13 = new modelo.Perguntas();
-		p13.setQuestao("");
-		p13.setAlternativa1("");
-		p13.setAlternativa2("");
-		p13.setAlternativa3("");
-		p13.setAlternativa4("");
-		p13.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p13);
+		p13.setQuestao("Qual é o nome da menina que se suicida em 13 Reasons Why");
+		p13.setAlternativa1("Georgia");
+		p13.setAlternativa2("Amanda");
+		p13.setAlternativa3("Hannah");
+		p13.setAlternativa4("Julie");
+		p13.setAlternativaCorreta(3);
+		modelo.Perguntas.sessaoCinema.add(p13);
 
-		// Pergunta Programming #14
+		// Pergunta Cinema #14
 		modelo.Perguntas p14 = new modelo.Perguntas();
-		p14.setQuestao("");
-		p14.setAlternativa1("");
-		p14.setAlternativa2("");
-		p14.setAlternativa3("");
-		p14.setAlternativa4("");
+		p14.setQuestao("O povo Viking da série Vikings vivia em qual região?");
+		p14.setAlternativa1("Oeste da Ásia");
+		p14.setAlternativa2("Europa ocidental");
+		p14.setAlternativa3("Ao redor do Mar Mediterrâneo");
+		p14.setAlternativa4("Escandinávia");
 		p14.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p14);
+		modelo.Perguntas.sessaoCinema.add(p14);
 
 		// Pergunta Programming #15
 		modelo.Perguntas p15 = new modelo.Perguntas();
-		p15.setQuestao("");
-		p15.setAlternativa1("");
-		p15.setAlternativa2("");
-		p15.setAlternativa3("");
-		p15.setAlternativa4("");
-		p15.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p15);
+		p15.setQuestao("Van Helsing é uma série que trata-se de");
+		p15.setAlternativa1("Vampiros");
+		p15.setAlternativa2("Alienígenas");
+		p15.setAlternativa3("Orcs");
+		p15.setAlternativa4("Mágia");
+		p15.setAlternativaCorreta(1);
+		modelo.Perguntas.sessaoCinema.add(p15);
 
 		// Pergunta Programming #16
 		modelo.Perguntas p16 = new modelo.Perguntas();
-		p16.setQuestao("");
-		p16.setAlternativa1("");
-		p16.setAlternativa2("");
-		p16.setAlternativa3("");
-		p16.setAlternativa4("");
-		p16.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p16);
+		p16.setQuestao("Qual é o nome da irmã de Dexter Morgan?");
+		p16.setAlternativa1("Rita");
+		p16.setAlternativa2("Debra");
+		p16.setAlternativa3("Suzie");
+		p16.setAlternativa4("Amazon");
+		p16.setAlternativaCorreta(2);
+		modelo.Perguntas.sessaoCinema.add(p16);
 
 		// Pergunta Programming #17
 		modelo.Perguntas p17 = new modelo.Perguntas();
-		p17.setQuestao("");
-		p17.setAlternativa1("");
-		p17.setAlternativa2("");
-		p17.setAlternativa3("");
-		p17.setAlternativa4("");
-		p17.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p17);
+		p17.setQuestao("A série The Mentalist tem como seu protagonista:");
+		p17.setAlternativa1("Patrick Jane");
+		p17.setAlternativa2("James Neffrey");
+		p17.setAlternativa3("Charles Bugatti");
+		p17.setAlternativa4("Bryan O'Conner");
+		p17.setAlternativaCorreta(1);
+		modelo.Perguntas.sessaoCinema.add(p17);
 
 		// Pergunta Programming #18
 		modelo.Perguntas p18 = new modelo.Perguntas();
-		p18.setQuestao("");
-		p18.setAlternativa1("");
-		p18.setAlternativa2("");
-		p18.setAlternativa3("");
-		p18.setAlternativa4("");
-		p18.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p18);
+		p18.setQuestao("No que Sheldon Cooper é especialista?");
+		p18.setAlternativa1("Teoria da Relatividade");
+		p18.setAlternativa2("Teoria de Pitágoras");
+		p18.setAlternativa3("Teoria das Cordas");
+		p18.setAlternativa4("Teoria do Segredo");
+		p18.setAlternativaCorreta(3);
+		modelo.Perguntas.sessaoCinema.add(p18);
 
 		// Pergunta Programming #19
 		modelo.Perguntas p19 = new modelo.Perguntas();
-		p19.setQuestao("");
-		p19.setAlternativa1("");
-		p19.setAlternativa2("");
-		p19.setAlternativa3("");
-		p19.setAlternativa4("");
-		p19.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p19);
+		p19.setQuestao("Na série Daredevil, Matt Murdock é");
+		p19.setAlternativa1("Cego");
+		p19.setAlternativa2("Surdo");
+		p19.setAlternativa3("Mudo");
+		p19.setAlternativa4("Deus");
+		p19.setAlternativaCorreta(1);
+		modelo.Perguntas.sessaoCinema.add(p19);
 
 		// Pergunta Programming #20
 		modelo.Perguntas p20 = new modelo.Perguntas();
-		p20.setQuestao("");
-		p20.setAlternativa1("");
-		p20.setAlternativa2("");
-		p20.setAlternativa3("");
-		p20.setAlternativa4("");
+		p20.setQuestao("Smallville conta a história de qual Super-Herói?");
+		p20.setAlternativa1("Batman");
+		p20.setAlternativa2("Hulk");
+		p20.setAlternativa3("Homem-Aranha");
+		p20.setAlternativa4("Super-Homem");
 		p20.setAlternativaCorreta(4);
-		modelo.Perguntas.sessaoRock.add(p20);
+		modelo.Perguntas.sessaoCinema.add(p20);
 
 	}
 

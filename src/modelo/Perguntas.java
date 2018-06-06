@@ -11,6 +11,7 @@ public class Perguntas {
 	public static ArrayList<Perguntas> sessaoRock = new ArrayList<>();
 	public static ArrayList<Perguntas> sessaoGame = new ArrayList<>();
 	public static ArrayList<Perguntas> sessaoCinema = new ArrayList<>();
+	public static ArrayList<Perguntas> perguntasSelecionadas = new ArrayList<>();
 	
 	//Método Mágico
 	public String getQuestao() {
