@@ -10,12 +10,14 @@ public DefaultTableModel listarRanking() {
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Nome");
 		model.addColumn("Acertos");
+		model.addColumn("Categoria");
 		model.addColumn("Data");
 		
 		for(int i=0; i<modelo.Players.players.size(); i++) {
 			model.addRow(new Object[] {
 					modelo.Players.players.get(i).getNome(),
 					modelo.Players.players.get(i).getAcertos(),
+					modelo.Players.players.get(i).getCategoria(),
 					modelo.Players.players.get(i).getData()
 				});
 		}

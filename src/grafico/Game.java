@@ -51,16 +51,18 @@ public class Game extends JFrame {
 		SelecionarPerguntas a = new SelecionarPerguntas();
 		contentPane.add(a.painelPerguntas());
 		
+		//Painel Estatísticas
 		JPanel panelEstatisticas = new JPanel();
 		panelEstatisticas.setBounds(320, 39, 120, 213);
 		contentPane.add(panelEstatisticas);
 		panelEstatisticas.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("N\u00FAmeros");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel.setBounds(10, 11, 100, 22);
-		panelEstatisticas.add(lblNewLabel);
+		//Estatísticas
+		JLabel lblNumeros = new JLabel("Números");
+		lblNumeros.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNumeros.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNumeros.setBounds(10, 11, 100, 22);
+		panelEstatisticas.add(lblNumeros);
 		
 		lblPulos.setText("Pulos: "+modelo.Estaticas.pular);
 		lblPulos.setHorizontalAlignment(SwingConstants.LEFT);
@@ -86,6 +88,7 @@ public class Game extends JFrame {
 		lblErros.setBounds(10, 143, 100, 22);
 		panelEstatisticas.add(lblErros);
 		
+		//Botões
 		JButton btnPular = new JButton("PULAR");
 		btnPular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -99,6 +102,7 @@ public class Game extends JFrame {
 					//pular
 					modelo.Estaticas.indexPerguntas++;
 				
+					//Próxima questão questão
 					if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
 				
 						SelecionarPerguntas.lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
@@ -133,10 +137,15 @@ public class Game extends JFrame {
 		btnAjuda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(modelo.Estaticas.ajuda == 0) {
+					
+					//Executar método
 					codigo.Ajuda a = new codigo.Ajuda();
 					a.ajuda();
+					
+					//Incrementar pulo
 					modelo.Estaticas.ajuda++;
 					lblAjuda.setText("Ajuda: "+modelo.Estaticas.ajuda);
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Você só pode pedir ajuda uma vez");
 				}
@@ -155,18 +164,22 @@ public class Game extends JFrame {
 					Players b = new Players();
 					b.setNome(modelo.Estaticas.nomeJogador);
 					b.setAcertos(modelo.Estaticas.acertos);
-					b.setErros(modelo.Estaticas.erros);
 					b.setAjuda(modelo.Estaticas.ajuda);
 					b.setPulo(modelo.Estaticas.pular);
 					b.setData(modelo.Estaticas.data);
+					b.setCategoria(modelo.Estaticas.categoria);
 					modelo.Players.players.add(b);
 					
+					//Voltar ao menu
 					Lobby a = new Lobby();
 					dispose();
 					
 				}else{
+					
+					//Voltar ao menu
 					Lobby a = new Lobby();
 					dispose();
+					
 				}
 			}
 		});

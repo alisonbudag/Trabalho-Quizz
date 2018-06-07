@@ -42,6 +42,7 @@ public class Lobby extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
 		
+		//Dados do Jogador
 		JLabel lblNome = new JLabel("NOME");
 		lblNome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNome.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -55,6 +56,7 @@ public class Lobby extends JFrame {
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
+		//Categoria selecionada
 		JLabel lblCategoria = new JLabel("CATEGORIA");
 		lblCategoria.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCategoria.setForeground(Color.WHITE);
@@ -69,9 +71,60 @@ public class Lobby extends JFrame {
 		comboCategoria.addItem("Séries");
 		contentPane.add(comboCategoria);
 		
+		//Botões
 		JButton btnJogar = new JButton("JOGAR");
 		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnJogar.setBounds(221, 200, 98, 82);
+		btnJogar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String nome = txtNome.getText();
+				
+				codigo.Players c = new codigo.Players();
+				
+				if(c.validarNome(nome) == true){
+					
+					//Resetando variáveis
+					modelo.Estaticas.indexPerguntas = 0;
+					modelo.Estaticas.pular = 0;
+					modelo.Estaticas.ajuda = 0;
+					modelo.Estaticas.acertos = 0;
+					modelo.Estaticas.erros = 0;
+					modelo.Randomizar.ajudaRandom = 0;
+					
+					//Aplicando visibilidade nas alternativas para o novo jogo
+					SelecionarPerguntas.opcaoA.setVisible(true);
+					SelecionarPerguntas.opcaoB.setVisible(true);
+					SelecionarPerguntas.opcaoC.setVisible(true);
+					SelecionarPerguntas.opcaoD.setVisible(true);
+					SelecionarPerguntas.opcoes.clearSelection();
+					
+					//Resetando Arrays
+					modelo.Perguntas.perguntasSelecionadas.clear();
+					modelo.Randomizar.randomizar.clear();
+					
+					//Guardando Jogador, Categoria e Data
+					modelo.Estaticas.nomeJogador = txtNome.getText();
+					modelo.Estaticas.categoria = comboCategoria.getSelectedItem().toString();;
+					codigo.Players p = new codigo.Players();
+					modelo.Estaticas.data = p.guardarHora();
+				
+					//Preparando novo jogo
+					String categoria = comboCategoria.getSelectedItem().toString();
+				
+					SelecionarPerguntas a = new SelecionarPerguntas();
+					a.selecionarPerguntas(categoria);
+				
+					Game b = new Game();
+					dispose();
+					
+				}
+				
+			}
+		});
+		
 		contentPane.add(btnJogar);
 		
 		JButton btnSair = new JButton("SAIR");
@@ -94,48 +147,6 @@ public class Lobby extends JFrame {
 		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRanking.setBounds(330, 200, 110, 33);
 		contentPane.add(btnRanking);
-		btnJogar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				String nome = txtNome.getText();
-				
-				codigo.Players c = new codigo.Players();
-				
-				
-				if(c.validarNome(nome) == true){
-					
-					//Resetando variáveis
-					modelo.Perguntas.perguntasSelecionadas.clear();
-					modelo.Randomizar.randomizar.clear();
-					modelo.Estaticas.indexPerguntas = 0;
-					modelo.Estaticas.pular = 0;
-					modelo.Estaticas.ajuda = 0;
-					modelo.Estaticas.nomeJogador = txtNome.getText();
-					modelo.Estaticas.acertos = 0;
-					modelo.Estaticas.erros = 0;
-					modelo.Estaticas.data = c.guardarHora();
-					modelo.Randomizar.ajudaRandom = 0;
-					SelecionarPerguntas.opcaoA.setVisible(true);
-					SelecionarPerguntas.opcaoB.setVisible(true);
-					SelecionarPerguntas.opcaoC.setVisible(true);
-					SelecionarPerguntas.opcaoD.setVisible(true);
-					SelecionarPerguntas.opcoes.clearSelection();
-				
-					//Abrindo novo jogo
-					String categoria = comboCategoria.getSelectedItem().toString();
-				
-					SelecionarPerguntas a = new SelecionarPerguntas();
-					a.selecionarPerguntas(categoria);
-				
-					Game b = new Game();
-					dispose();
-					
-				}
-				
-			}
-		});
 		
 		setVisible(true);
 	}

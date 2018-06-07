@@ -9,5 +9,6 @@ public class Estaticas {
 	public static int erros;
 	public static String nomeJogador;
 	public static String data;
+	public static String categoria;
 
 }

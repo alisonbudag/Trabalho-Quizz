@@ -5,14 +5,22 @@ import java.util.ArrayList;
 public class Players {
 	
 	//Atributos
-	private String nome, data;
-	private int acertos, erros, pulo, ajuda;
+	private String nome, data, categoria;
+	private int acertos, pulo, ajuda;
 	
 	public static ArrayList<Players> players = new ArrayList<>();
 	
-	//Método Mágico
+	//Método Mágico	
 	public String getNome() {
 		return nome;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public void setNome(String nome) {
@@ -33,14 +41,6 @@ public class Players {
 
 	public void setAcertos(int acertos) {
 		this.acertos = acertos;
-	}
-
-	public int getErros() {
-		return erros;
-	}
-
-	public void setErros(int erros) {
-		this.erros = erros;
 	}
 
 	public int getPulo() {
