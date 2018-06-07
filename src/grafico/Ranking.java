@@ -1,0 +1,80 @@
+package grafico;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+
+import codigo.SelecionarPerguntas;
+import modelo.Perguntas;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+
+public class Ranking extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	public Ranking() {
+		setUndecorated(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
+		
+		JLabel lblRanking = new JLabel("RANKING");
+		lblRanking.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRanking.setForeground(Color.WHITE);
+		lblRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblRanking.setBounds(10, 11, 430, 27);
+		contentPane.add(lblRanking);
+		
+		//Instanciar Painel de Controle
+		codigo.Tabela a = new codigo.Tabela();
+				
+		JScrollPane barraTabela = new JScrollPane();
+		barraTabela.setBounds(10, 39, 430, 216);
+		contentPane.add(barraTabela);
+				
+		table = new JTable(a.listarRanking());
+		table.setDefaultEditor(Object.class, null);
+		barraTabela.setViewportView(table);
+		
+		JButton btnMenu = new JButton("MENU");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lobby a = new Lobby();
+				dispose();
+			}
+		});
+		btnMenu.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnMenu.setBounds(351, 266, 89, 23);
+		contentPane.add(btnMenu);
+		
+		
+		setVisible(true);
+	}
+}
