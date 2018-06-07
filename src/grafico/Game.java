@@ -130,6 +130,18 @@ public class Game extends JFrame {
 		contentPane.add(btnPular);
 		
 		JButton btnAjuda = new JButton("AJUDA");
+		btnAjuda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(modelo.Estaticas.ajuda == 0) {
+					codigo.Ajuda a = new codigo.Ajuda();
+					a.ajuda();
+					modelo.Estaticas.ajuda++;
+					lblAjuda.setText("Ajuda: "+modelo.Estaticas.ajuda);
+				}else {
+					JOptionPane.showMessageDialog(null, "Você só pode pedir ajuda uma vez");
+				}
+			}
+		});
 		btnAjuda.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnAjuda.setBounds(168, 263, 130, 23);
 		contentPane.add(btnAjuda);

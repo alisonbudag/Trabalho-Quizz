@@ -6,6 +6,7 @@ import java.util.Random;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -157,7 +158,7 @@ public class SelecionarPerguntas {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(1 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+				if(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta() == 1){
 					modelo.Estaticas.acertos ++;
 					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
 				}else{
@@ -176,6 +177,10 @@ public class SelecionarPerguntas {
 					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
 					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
 					opcoes.clearSelection();
+					opcaoA.setVisible(true);
+					opcaoB.setVisible(true);
+					opcaoC.setVisible(true);
+					opcaoD.setVisible(true);
 				
 				}else{
 					
@@ -196,7 +201,7 @@ public class SelecionarPerguntas {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(2 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+				if(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta() == 2){
 					modelo.Estaticas.acertos ++;
 					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
 				}else{
@@ -215,6 +220,10 @@ public class SelecionarPerguntas {
 					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
 					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
 					opcoes.clearSelection();
+					opcaoA.setVisible(true);
+					opcaoB.setVisible(true);
+					opcaoC.setVisible(true);
+					opcaoD.setVisible(true);
 				
 				}else{
 					
@@ -235,7 +244,7 @@ public class SelecionarPerguntas {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(3 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+				if(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta() == 3){
 					modelo.Estaticas.acertos ++;
 					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
 				}else{
@@ -254,6 +263,10 @@ public class SelecionarPerguntas {
 					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
 					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
 					opcoes.clearSelection();
+					opcaoA.setVisible(true);
+					opcaoB.setVisible(true);
+					opcaoC.setVisible(true);
+					opcaoD.setVisible(true);
 				
 				}else{
 					
@@ -274,7 +287,7 @@ public class SelecionarPerguntas {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(4 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+				if(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta() == 4){
 					modelo.Estaticas.acertos ++;
 					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
 				}else{
@@ -293,6 +306,10 @@ public class SelecionarPerguntas {
 					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
 					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
 					opcoes.clearSelection();
+					opcaoA.setVisible(true);
+					opcaoB.setVisible(true);
+					opcaoC.setVisible(true);
+					opcaoD.setVisible(true);
 				
 				}else{
 					

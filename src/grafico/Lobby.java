@@ -92,10 +92,10 @@ public class Lobby extends JFrame {
 		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRanking.setBounds(330, 200, 110, 33);
 		contentPane.add(btnRanking);
-		btnJogar.addMouseListener(new MouseListener() {
+		btnJogar.addActionListener(new ActionListener() {
 			
 			@Override
-			public void mouseReleased(MouseEvent e) {
+			public void actionPerformed(ActionEvent e) {
 				
 				String nome = txtNome.getText();
 				
@@ -114,6 +114,7 @@ public class Lobby extends JFrame {
 					modelo.Estaticas.acertos = 0;
 					modelo.Estaticas.erros = 0;
 					modelo.Estaticas.data = c.guardarHora();
+					modelo.Randomizar.ajudaRandom = 0;
 					SelecionarPerguntas.opcaoA.setVisible(true);
 					SelecionarPerguntas.opcaoB.setVisible(true);
 					SelecionarPerguntas.opcaoC.setVisible(true);
@@ -130,30 +131,6 @@ public class Lobby extends JFrame {
 					dispose();
 					
 				}
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 		});
