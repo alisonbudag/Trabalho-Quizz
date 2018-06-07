@@ -8,8 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import codigo.SelecionarPerguntas;
+import modelo.Players;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
@@ -22,11 +25,17 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JRadioButton;
 
 public class Game extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
+	public static JLabel lblPulos = new JLabel();
+	public static JLabel lblAjuda = new JLabel();
+	public static JLabel lblAcertos = new JLabel();
+	public static JLabel lblErros = new JLabel();
 
 	public Game() {
 		setUndecorated(true);
@@ -38,10 +47,9 @@ public class Game extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panelPerguntas = new JPanel();
-		panelPerguntas.setBounds(10, 39, 300, 213);
-		contentPane.add(panelPerguntas);
-		panelPerguntas.setLayout(null);
+		//Chamar JPanel Perguntas
+		SelecionarPerguntas a = new SelecionarPerguntas();
+		contentPane.add(a.painelPerguntas());
 		
 		JPanel panelEstatisticas = new JPanel();
 		panelEstatisticas.setBounds(320, 39, 120, 213);
@@ -54,48 +62,105 @@ public class Game extends JFrame {
 		lblNewLabel.setBounds(10, 11, 100, 22);
 		panelEstatisticas.add(lblNewLabel);
 		
-		JLabel lblPulos = new JLabel("Pulos: ");
+		lblPulos.setText("Pulos: "+modelo.Estaticas.pular);
 		lblPulos.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPulos.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblPulos.setBounds(10, 44, 100, 22);
 		panelEstatisticas.add(lblPulos);
 		
-		JLabel lblAjuda = new JLabel("Ajuda: ");
+		lblAjuda.setText("Ajuda: "+modelo.Estaticas.ajuda);
 		lblAjuda.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAjuda.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblAjuda.setBounds(10, 77, 100, 22);
 		panelEstatisticas.add(lblAjuda);
 		
-		JLabel lblAcertos = new JLabel("Acertos: ");
+		lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
 		lblAcertos.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAcertos.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblAcertos.setBounds(10, 110, 100, 22);
 		panelEstatisticas.add(lblAcertos);
 		
-		JLabel lblErros = new JLabel("Erros: ");
+		lblErros.setText("Erros: "+modelo.Estaticas.erros);
 		lblErros.setHorizontalAlignment(SwingConstants.LEFT);
 		lblErros.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblErros.setBounds(10, 143, 100, 22);
 		panelEstatisticas.add(lblErros);
 		
-		JButton btnConfirmar = new JButton("CONFIRMAR");
-		btnConfirmar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnConfirmar.setBounds(10, 263, 145, 23);
-		contentPane.add(btnConfirmar);
-		
 		JButton btnPular = new JButton("PULAR");
+		btnPular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if(modelo.Estaticas.pular < 3){
+				
+					//Incrementando Pulo
+					modelo.Estaticas.pular++;
+					lblPulos.setText("Pulos: "+modelo.Estaticas.pular);
+				
+					//pular
+					modelo.Estaticas.indexPerguntas++;
+				
+					if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
+				
+						SelecionarPerguntas.lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+						SelecionarPerguntas.txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+						SelecionarPerguntas.opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+						SelecionarPerguntas.opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+						SelecionarPerguntas.opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+						SelecionarPerguntas.opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+						SelecionarPerguntas.opcoes.clearSelection();
+				
+					}else{
+					
+						SelecionarPerguntas.lblQuestao.setText("ACABOU!");
+						SelecionarPerguntas.txtPergunta.setText("");
+						SelecionarPerguntas.opcaoA.setVisible(false);
+						SelecionarPerguntas.opcaoB.setVisible(false);
+						SelecionarPerguntas.opcaoC.setVisible(false);
+						SelecionarPerguntas.opcaoD.setVisible(false);
+					
+					}
+				
+				}else{
+					JOptionPane.showMessageDialog(null, "Você já pulou 3 vezes.");
+				}
+			}
+		});
 		btnPular.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnPular.setBounds(168, 263, 130, 23);
+		btnPular.setBounds(10, 263, 145, 23);
 		contentPane.add(btnPular);
 		
 		JButton btnAjuda = new JButton("AJUDA");
-		btnAjuda.addActionListener(new ActionListener() {
+		btnAjuda.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnAjuda.setBounds(168, 263, 130, 23);
+		contentPane.add(btnAjuda);
+		
+		JButton btnMenu = new JButton("MENU");
+		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(SelecionarPerguntas.lblQuestao.getText().equals("ACABOU!")){
+					
+					//Adicionar no vetor
+					Players b = new Players();
+					b.setNome(modelo.Estaticas.nomeJogador);
+					b.setAcertos(modelo.Estaticas.acertos);
+					b.setErros(modelo.Estaticas.erros);
+					b.setAjuda(modelo.Estaticas.ajuda);
+					b.setPulo(modelo.Estaticas.pular);
+					b.setData(modelo.Estaticas.data);
+					modelo.Players.players.add(b);
+					
+					Lobby a = new Lobby();
+					dispose();
+					
+				}else{
+					Lobby a = new Lobby();
+					dispose();
+				}
 			}
 		});
-		btnAjuda.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnAjuda.setBounds(312, 263, 130, 23);
-		contentPane.add(btnAjuda);
+		btnMenu.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnMenu.setBounds(312, 263, 130, 23);
+		contentPane.add(btnMenu);
 		setLocationRelativeTo(null);
 		
 		setVisible(true);

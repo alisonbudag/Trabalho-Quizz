@@ -1,13 +1,24 @@
 package codigo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import grafico.Game;
+import modelo.Perguntas;
 
 public class SelecionarPerguntas {
 
 	public void selecionarPerguntas(String categoria) {
 
+		
 		Random geraPergunta = new Random();
 		boolean valida = false;
 
@@ -93,11 +104,209 @@ public class SelecionarPerguntas {
 
 	}
 
+	public static JRadioButton opcaoA = new JRadioButton();
+	public static JRadioButton opcaoB = new JRadioButton();
+	public static JRadioButton opcaoC = new JRadioButton();
+	public static JRadioButton opcaoD = new JRadioButton();
+	public static JTextArea txtPergunta = new JTextArea();
+	public static JLabel lblQuestao = new JLabel();
+	public static ButtonGroup opcoes = new ButtonGroup();
+	
 	public JPanel painelPerguntas(){
 		
 		JPanel jp = new JPanel();
 		jp.setBounds(10, 39, 300, 213);
 		jp.setLayout(null);
+		
+		lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+		lblQuestao.setBounds(10, 11, 280, 20);
+		jp.add(lblQuestao);
+		
+		txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+		txtPergunta.setLineWrap(true);
+		txtPergunta.setEditable(false);
+		JScrollPane barraPergunta = new JScrollPane(txtPergunta);
+		barraPergunta.setBounds(10, 40, 280, 38);
+		jp.add(barraPergunta);
+		
+		opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+		opcaoA.setBounds(10, 89, 280, 20);
+		jp.add(opcaoA);
+		
+		opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+		opcaoB.setBounds(10, 120, 280, 20);
+		jp.add(opcaoB);
+		
+		opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+		opcaoC.setBounds(10, 151, 280, 20);
+		jp.add(opcaoC);
+		
+		opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+		opcaoD.setBounds(10, 182, 280, 20);
+		jp.add(opcaoD);
+		
+		opcoes.add(opcaoA);
+		opcoes.add(opcaoB);
+		opcoes.add(opcaoC);
+		opcoes.add(opcaoD);
+		
+		
+		//Ações
+		opcaoA.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(1 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+					modelo.Estaticas.acertos ++;
+					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
+				}else{
+					modelo.Estaticas.erros ++;
+					Game.lblErros.setText("Erros: "+modelo.Estaticas.erros);
+				}
+				
+				modelo.Estaticas.indexPerguntas++;
+				
+				if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
+				
+					lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+					txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+					opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+					opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+					opcoes.clearSelection();
+				
+				}else{
+					
+					lblQuestao.setText("ACABOU!");
+					txtPergunta.setText("");
+					opcaoA.setVisible(false);
+					opcaoB.setVisible(false);
+					opcaoC.setVisible(false);
+					opcaoD.setVisible(false);
+					
+				}
+				
+			}
+		});
+		
+		opcaoB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(2 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+					modelo.Estaticas.acertos ++;
+					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
+				}else{
+					modelo.Estaticas.erros ++;
+					Game.lblErros.setText("Erros: "+modelo.Estaticas.erros);
+				}
+				
+				modelo.Estaticas.indexPerguntas++;
+				
+				if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
+				
+					lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+					txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+					opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+					opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+					opcoes.clearSelection();
+				
+				}else{
+					
+					lblQuestao.setText("ACABOU!");
+					txtPergunta.setText("");
+					opcaoA.setVisible(false);
+					opcaoB.setVisible(false);
+					opcaoC.setVisible(false);
+					opcaoD.setVisible(false);
+					
+				}
+				
+			}
+		});
+		
+		opcaoC.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(3 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+					modelo.Estaticas.acertos ++;
+					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
+				}else{
+					modelo.Estaticas.erros ++;
+					Game.lblErros.setText("Erros: "+modelo.Estaticas.erros);
+				}
+				
+				modelo.Estaticas.indexPerguntas++;
+				
+				if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
+				
+					lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+					txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+					opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+					opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+					opcoes.clearSelection();
+				
+				}else{
+					
+					lblQuestao.setText("ACABOU!");
+					txtPergunta.setText("");
+					opcaoA.setVisible(false);
+					opcaoB.setVisible(false);
+					opcaoC.setVisible(false);
+					opcaoD.setVisible(false);
+					
+				}
+				
+			}
+		});
+		
+		opcaoD.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(4 == modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativaCorreta()){
+					modelo.Estaticas.acertos ++;
+					Game.lblAcertos.setText("Acertos: "+modelo.Estaticas.acertos);
+				}else{
+					modelo.Estaticas.erros ++;
+					Game.lblErros.setText("Erros: "+modelo.Estaticas.erros);
+				}
+				
+				modelo.Estaticas.indexPerguntas++;
+				
+				if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
+				
+					lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+					txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+					opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+					opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+					opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+					opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+					opcoes.clearSelection();
+				
+				}else{
+					
+					lblQuestao.setText("ACABOU!");
+					txtPergunta.setText("");
+					opcaoA.setVisible(false);
+					opcaoB.setVisible(false);
+					opcaoC.setVisible(false);
+					opcaoD.setVisible(false);
+					
+				}
+				
+			}
+		});
 		
 		return jp;
 		

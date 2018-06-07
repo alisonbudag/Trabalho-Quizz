@@ -71,7 +71,7 @@ public class PerguntasPredefinidas extends PadraoPerguntas {
 		modelo.Perguntas p7 = new modelo.Perguntas();
 		p7.setQuestao("We are the champions, my friends/ And we'll keep on fighting till the end");
 		p7.setAlternativa1("T-Rex");
-		p5.setAlternativa2("The Cure");
+		p7.setAlternativa2("The Cure");
 		p7.setAlternativa3("Jefferson Airplane");
 		p7.setAlternativa4("Queen");
 		p7.setAlternativaCorreta(4);

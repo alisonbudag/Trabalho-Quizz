@@ -8,8 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import codigo.SelecionarPerguntas;
+import modelo.Perguntas;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
@@ -82,6 +85,13 @@ public class Lobby extends JFrame {
 		contentPane.add(btnSair);
 		
 		JButton btnRanking = new JButton("RANKING");
+		btnRanking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for(int i=0; i<modelo.Perguntas.perguntasSelecionadas.size(); i++){
+					System.out.println(Perguntas.perguntasSelecionadas.get(i).getQuestao());
+				}
+			}
+		});
 		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRanking.setBounds(330, 200, 110, 33);
 		contentPane.add(btnRanking);
@@ -90,12 +100,39 @@ public class Lobby extends JFrame {
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				
-				modelo.Perguntas.perguntasSelecionadas.clear();
+				String nome = txtNome.getText();
 				
-				String categoria = comboCategoria.getSelectedItem().toString();
+				codigo.Players c = new codigo.Players();
 				
-				SelecionarPerguntas a = new SelecionarPerguntas();
-				a.selecionarPerguntas(categoria);
+				
+				if(c.validarNome(nome) == true){
+					
+					//Resetando variáveis
+					modelo.Perguntas.perguntasSelecionadas.clear();
+					modelo.Randomizar.randomizar.clear();
+					modelo.Estaticas.indexPerguntas = 0;
+					modelo.Estaticas.pular = 0;
+					modelo.Estaticas.ajuda = 0;
+					modelo.Estaticas.nomeJogador = txtNome.getText();
+					modelo.Estaticas.acertos = 0;
+					modelo.Estaticas.erros = 0;
+					modelo.Estaticas.data = c.guardarHora();
+					SelecionarPerguntas.opcaoA.setVisible(true);
+					SelecionarPerguntas.opcaoB.setVisible(true);
+					SelecionarPerguntas.opcaoC.setVisible(true);
+					SelecionarPerguntas.opcaoD.setVisible(true);
+					SelecionarPerguntas.opcoes.clearSelection();
+				
+					//Abrindo novo jogo
+					String categoria = comboCategoria.getSelectedItem().toString();
+				
+					SelecionarPerguntas a = new SelecionarPerguntas();
+					a.selecionarPerguntas(categoria);
+				
+					Game b = new Game();
+					dispose();
+					
+				}
 				
 			}
 			
