@@ -2,14 +2,15 @@ package modelo;
 
 import java.util.ArrayList;
 
-public class Players {
+public class Players implements Comparable<Players>{
 	
 	//Atributos
 	private String nome, data, categoria;
 	private int acertos, pulo, ajuda;
 	
+	//ArrayList
 	public static ArrayList<Players> players = new ArrayList<>();
-	
+
 	//Método Mágico	
 	public String getNome() {
 		return nome;
@@ -59,4 +60,13 @@ public class Players {
 		this.ajuda = ajuda;
 	}
 
+	@Override
+	public int compareTo(Players outroPlayer) {
+		int compararAcertos=((Players)outroPlayer).getAcertos();
+		
+		return compararAcertos-this.acertos;
+	}
+	
+	
+	
 }

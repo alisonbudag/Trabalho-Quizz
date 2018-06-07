@@ -1,5 +1,7 @@
 package codigo;
 
+import java.util.Collections;
+
 import javax.swing.table.DefaultTableModel;
 
 public class Tabela {
@@ -12,6 +14,8 @@ public DefaultTableModel listarRanking() {
 		model.addColumn("Acertos");
 		model.addColumn("Categoria");
 		model.addColumn("Data");
+		
+		Collections.sort(modelo.Players.players);
 		
 		for(int i=0; i<modelo.Players.players.size(); i++) {
 			model.addRow(new Object[] {

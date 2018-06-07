@@ -276,7 +276,7 @@ public class PerguntasPredefinidas extends PadraoPerguntas {
 		modelo.Perguntas p7 = new modelo.Perguntas();
 		p7.setQuestao("Em que ano foi lançado o PlayStation?");
 		p7.setAlternativa1("1997");
-		p5.setAlternativa2("1998");
+		p7.setAlternativa2("1998");
 		p7.setAlternativa3("1994");
 		p7.setAlternativa4("1996");
 		p7.setAlternativaCorreta(3);
@@ -481,7 +481,7 @@ public class PerguntasPredefinidas extends PadraoPerguntas {
 		modelo.Perguntas p7 = new modelo.Perguntas();
 		p7.setQuestao("Não contavam com minha astúcia!");
 		p7.setAlternativa1("Chaves");
-		p5.setAlternativa2("Chapolin Colorado");
+		p7.setAlternativa2("Chapolin Colorado");
 		p7.setAlternativa3("Sheldon Cooper");
 		p7.setAlternativa4("Ralf");
 		p7.setAlternativaCorreta(2);
