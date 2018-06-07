@@ -2,12 +2,12 @@ package modelo;
 
 public class Estaticas {
 	
-	public static int indexPerguntas = 0;
-	public static int pular = 0;
-	public static int ajuda = 0;
-	public static int acertos = 0;
-	public static int erros = 0;
-	public static String nomeJogador = "";
-	public static String data = "";
+	public static int indexPerguntas;
+	public static int pular;
+	public static int ajuda;
+	public static int acertos;
+	public static int erros;
+	public static String nomeJogador;
+	public static String data;
 
 }

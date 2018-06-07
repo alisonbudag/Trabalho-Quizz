@@ -87,9 +87,6 @@ public class Lobby extends JFrame {
 		JButton btnRanking = new JButton("RANKING");
 		btnRanking.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for(int i=0; i<modelo.Perguntas.perguntasSelecionadas.size(); i++){
-					System.out.println(Perguntas.perguntasSelecionadas.get(i).getQuestao());
-				}
 			}
 		});
 		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
