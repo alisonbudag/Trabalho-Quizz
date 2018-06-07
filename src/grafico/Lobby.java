@@ -1,30 +1,21 @@
 package grafico;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import codigo.SelecionarPerguntas;
-import modelo.Perguntas;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Lobby extends JFrame {
 
@@ -147,6 +138,11 @@ public class Lobby extends JFrame {
 		btnRanking.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRanking.setBounds(330, 200, 110, 33);
 		contentPane.add(btnRanking);
+		
+		JLabel lblImagem = new JLabel("");
+		lblImagem.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\imgLobby.jpg"));
+		lblImagem.setBounds(10, 26, 430, 134);
+		contentPane.add(lblImagem);
 		
 		setVisible(true);
 	}

@@ -1,32 +1,22 @@
 package grafico;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import codigo.SelecionarPerguntas;
 import modelo.Players;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
 import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JRadioButton;
 
 public class Game extends JFrame {
 
@@ -186,6 +176,11 @@ public class Game extends JFrame {
 		btnMenu.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnMenu.setBounds(312, 263, 130, 23);
 		contentPane.add(btnMenu);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\imgGame.jpg"));
+		lblNewLabel.setBounds(188, 5, 73, 23);
+		contentPane.add(lblNewLabel);
 		setLocationRelativeTo(null);
 		
 		setVisible(true);
