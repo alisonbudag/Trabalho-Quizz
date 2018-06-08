@@ -193,7 +193,7 @@ public class SelecionarPerguntas {
 					}else{
 						
 						lblQuestao.setText("ACABOU!");
-						txtPergunta.setText("");
+						txtPergunta.setVisible(false);
 						opcaoA.setVisible(false);
 						opcaoB.setVisible(false);
 						opcaoC.setVisible(false);
@@ -236,7 +236,7 @@ public class SelecionarPerguntas {
 					}else{
 						
 						lblQuestao.setText("ACABOU!");
-						txtPergunta.setText("");
+						txtPergunta.setVisible(false);
 						opcaoA.setVisible(false);
 						opcaoB.setVisible(false);
 						opcaoC.setVisible(false);
@@ -279,7 +279,7 @@ public class SelecionarPerguntas {
 					}else{
 						
 						lblQuestao.setText("ACABOU!");
-						txtPergunta.setText("");
+						txtPergunta.setVisible(false);
 						opcaoA.setVisible(false);
 						opcaoB.setVisible(false);
 						opcaoC.setVisible(false);
@@ -322,7 +322,7 @@ public class SelecionarPerguntas {
 					}else{
 						
 						lblQuestao.setText("ACABOU!");
-						txtPergunta.setText("");
+						txtPergunta.setVisible(false);
 						opcaoA.setVisible(false);
 						opcaoB.setVisible(false);
 						opcaoC.setVisible(false);

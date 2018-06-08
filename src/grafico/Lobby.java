@@ -86,6 +86,7 @@ public class Lobby extends JFrame {
 					modelo.Randomizar.ajudaRandom = 0;
 					
 					//Aplicando visibilidade nas alternativas para o novo jogo
+					SelecionarPerguntas.txtPergunta.setVisible(true);
 					SelecionarPerguntas.opcaoA.setVisible(true);
 					SelecionarPerguntas.opcaoB.setVisible(true);
 					SelecionarPerguntas.opcaoC.setVisible(true);

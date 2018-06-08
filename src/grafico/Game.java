@@ -93,26 +93,13 @@ public class Game extends JFrame {
 					modelo.Estaticas.indexPerguntas++;
 				
 					//Próxima questão questão
-					if(modelo.Estaticas.indexPerguntas < (10 + modelo.Estaticas.pular)){
-				
-						SelecionarPerguntas.lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
-						SelecionarPerguntas.txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
-						SelecionarPerguntas.opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
-						SelecionarPerguntas.opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
-						SelecionarPerguntas.opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
-						SelecionarPerguntas.opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
-						SelecionarPerguntas.opcoes.clearSelection();
-				
-					}else{
-					
-						SelecionarPerguntas.lblQuestao.setText("ACABOU!");
-						SelecionarPerguntas.txtPergunta.setText("");
-						SelecionarPerguntas.opcaoA.setVisible(false);
-						SelecionarPerguntas.opcaoB.setVisible(false);
-						SelecionarPerguntas.opcaoC.setVisible(false);
-						SelecionarPerguntas.opcaoD.setVisible(false);
-					
-					}
+					SelecionarPerguntas.lblQuestao.setText((modelo.Estaticas.indexPerguntas+1-modelo.Estaticas.pular)+"ª QUESTÃO");
+					SelecionarPerguntas.txtPergunta.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getQuestao());
+					SelecionarPerguntas.opcaoA.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa1());
+					SelecionarPerguntas.opcaoB.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa2());
+					SelecionarPerguntas.opcaoC.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa3());
+					SelecionarPerguntas.opcaoD.setText(modelo.Perguntas.perguntasSelecionadas.get(modelo.Estaticas.indexPerguntas).getAlternativa4());
+					SelecionarPerguntas.opcoes.clearSelection();
 				
 				}else{
 					JOptionPane.showMessageDialog(null, "Você já pulou 3 vezes.");
