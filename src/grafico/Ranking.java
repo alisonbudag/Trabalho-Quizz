@@ -32,7 +32,7 @@ public class Ranking extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lblRanking = new JLabel("");
-		lblRanking.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\imgRanking.jpg"));
+		lblRanking.setIcon(new ImageIcon(getClass().getResource("/imgRanking.jpg")));
 		lblRanking.setBounds(10, 11, 430, 49);
 		contentPane.add(lblRanking);
 		

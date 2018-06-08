@@ -140,7 +140,7 @@ public class Lobby extends JFrame {
 		contentPane.add(btnRanking);
 		
 		JLabel lblImagem = new JLabel("");
-		lblImagem.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\imgLobby.jpg"));
+		lblImagem.setIcon(new ImageIcon(getClass().getResource("/imgLobby.jpg")));
 		lblImagem.setBounds(10, 26, 430, 134);
 		contentPane.add(lblImagem);
 		

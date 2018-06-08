@@ -178,7 +178,7 @@ public class Game extends JFrame {
 		contentPane.add(btnMenu);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ALISONRAFAEL\\Desktop\\Java Fundamentos\\06 - Orienta\u00E7\u00E3o Objetos\\Trabalho Quizz\\resources\\imgGame.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(getClass().getResource("/imgGame.jpg")));
 		lblNewLabel.setBounds(188, 5, 73, 23);
 		contentPane.add(lblNewLabel);
 		setLocationRelativeTo(null);
