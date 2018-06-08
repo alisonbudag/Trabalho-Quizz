@@ -160,7 +160,7 @@ public class SelecionarPerguntas {
 		
 		
 		//Ações
-		if(modelo.Players.players.size() == 0) {
+		if(modelo.Estaticas.quantasVezesPainelIniciou == 0) {
 			opcaoA.addActionListener(new ActionListener() {
 				
 				@Override
@@ -333,6 +333,8 @@ public class SelecionarPerguntas {
 				}
 			});
 		}
+		
+		modelo.Estaticas.quantasVezesPainelIniciou++;
 		
 		return jp;
 		
